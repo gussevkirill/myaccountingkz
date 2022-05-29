@@ -10,5 +10,4 @@ function Button({ children, onClick }) {
         </button>
     )
 }
-
 export default Button
