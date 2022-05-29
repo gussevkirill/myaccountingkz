@@ -1,0 +1,30 @@
+@import './reset.scss';
+@import './mixins.scss';
+
+// ----COMPONENTS-----
+@import './header.scss';
+@import './footer.scss';
+@import './modal.scss';
+@import './reviews.scss';
+@import './customSelect.scss';
+@import './rules.scss';
+
+// ----PAGES----
+@import './main.scss';
+@import './service.scss';
+@import './about.scss';
+@import './newQuestion.scss';
+@import './phoneConsultation.scss';
+@import './confidencial.scss';
+
+// ----SETTINGS----
+@import './settings.scss';
+@import './slider.scss';
+
+
+// ----FONTS-----
+@import './fonts.scss';
+
+
+// ----UI-----
+@import '../ui/buttons/btn.scss';

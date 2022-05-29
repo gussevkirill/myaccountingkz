@@ -1,0 +1,255 @@
+.footer {
+    padding: 80px 0 40px 0;
+    background-color: rgba(0, 0, 0);
+    color: #eee;
+
+    &__top {
+        &-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 80px;
+
+            @include mq(840) {
+                flex-wrap: wrap;
+            }
+
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 45px;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+
+            @include mq(840) {
+                margin-right: 0;
+                margin-bottom: 30px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+
+            @include mq(778){
+                &:nth-child(3n){
+                    margin-bottom: 0;
+                }
+            }
+
+            @include mq(524){
+                &:nth-child(3n){
+                    margin-bottom: 30px;
+                }
+            }
+
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &-icon {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                margin-bottom: 15px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 45px;
+                    height: 45px;
+                    display: block;
+                    background-color: #4dd1cd;
+                }
+            }
+
+            &:nth-child(1) {
+                &>div::before {
+                    mask-image: url('../../public/imgs/mobile.svg');
+                }
+            }
+
+            &:nth-child(2) {
+                &>div::before {
+                    mask-image: url('../../public/imgs/locationV2.svg');
+                }
+            }
+
+            &:nth-child(3) {
+                &>div::before {
+                    mask-image: url('../../public/imgs/letter.svg');
+                }
+            }
+
+            &:nth-child(4) {
+                &>div::before {
+                    mask-image: url('../../public/imgs/clock.svg');
+                }
+            }
+
+            &-title {
+                margin-bottom: 20px;
+                font-size: 150%;
+                font-weight: 600;
+                line-height: 1.5;
+
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 100px;
+
+        @include mq(656) {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+    
+        &-left {
+            display: flex;
+            align-items: center;
+            @include mq(895){
+                flex-wrap: wrap;
+            }
+            @include mq(656){
+                justify-content: center;
+            }
+
+            &-text {
+                font-size: 80%;
+                color: #ccc;
+                line-height: 1.8;
+                margin-right: 15px;
+                white-space: nowrap;
+            }
+        }
+
+        &-right {
+            &-items {
+                display: flex;
+                align-items: center;
+            }
+
+            &-item {
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+                transition: all .3s ease;
+                border-radius: 5px;
+                overflow: hidden;
+
+                &>a {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 5;
+                    font-size: 0;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                    background-color: #fff;
+                    transition: all .3s ease;
+                }
+
+                &::after {
+                    transform: translateY(200%);
+                }
+
+                &:nth-child(1) {
+                    &::before {
+                        mask-image: url('../../public/imgs/instagram.svg');
+                    }
+
+                    &::after {
+                        mask-image: url('../../public/imgs/instagram.svg');
+                    }
+                }
+
+                &:nth-child(2) {
+                    &::before {
+                        mask-image: url('../../public/imgs/telegram.svg');
+                    }
+
+                    &::after {
+                        mask-image: url('../../public/imgs/telegram.svg');
+                    }
+                }
+
+                &:nth-child(3) {
+                    &::before {
+                        mask-image: url('../../public/imgs/whatsapp.svg');
+                    }
+
+                    &::after {
+                        mask-image: url('../../public/imgs/whatsapp.svg');
+                    }
+                }
+
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    &:nth-child(2) {
+                        background-color: #0088cc;
+
+                        &::before {
+                            transform: translateY(-200%);
+                        }
+
+                        &::after {
+                            transform: translateY(0);
+                        }
+
+                    }
+
+                    &:nth-child(1) {
+                        background-color: #E4405F;
+
+                        &::before {
+                            transform: translateY(-200%);
+                        }
+
+                        &::after {
+                            transform: translateY(0);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        background-color: #25D366;
+
+                        &::before {
+                            transform: translateY(-200%);
+                        }
+
+                        &::after {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

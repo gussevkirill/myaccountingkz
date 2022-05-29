@@ -1,0 +1,337 @@
+.main {
+
+    &__services,
+    &__benefits,
+    &__about-me,
+    &__reviews {
+        padding: 60px 0;
+    }
+
+    &__content {
+        padding: 60px 0;
+
+        &-items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include mq(825) {
+                flex-wrap: wrap;
+            }
+
+        }
+
+        &-item {
+
+            width: 100%;
+            // max-width: calc(100% / 4);
+            text-align: center;
+
+            &-number {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 56px;
+                font-weight: 600;
+                color: #4dd1cd;
+            }
+
+            &-text {
+                font-weight: 300;
+                line-height: 1.8;
+                text-transform: uppercase;
+            }
+        }
+
+        &-services {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &>a {
+                @include mq(600) {
+                    width: 100%;
+                }
+
+                &:nth-child(1) {
+                    &>li {
+                        background: url('../../public/imgs/service1.jpg') center center / cover no-repeat;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &>li {
+                        background: url('../../public/imgs/service2.jpg') center center / cover no-repeat;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &>li {
+                        background: url('../../public/imgs/service3.jpg') center center / cover no-repeat;
+                    }
+                }
+
+                &:nth-child(4) {
+                    &>li {
+                        background: url('../../public/imgs/service4.jpg') center center / cover no-repeat;
+                    }
+                }
+
+                &:nth-child(5) {
+                    &>li {
+                        background: url('../../public/imgs/service5.jpg') center center / cover no-repeat;
+                    }
+                }
+            }
+        }
+
+
+        &-sercvice {
+            max-width: 285px;
+            min-height: 350px;
+            display: flex;
+            align-items: flex-end;
+            cursor: pointer;
+            transition: all .3s ease;
+            opacity: 1;
+            @include mq(600) {
+                max-width: 100%;
+            }
+            &-wrapper {
+                width: 100%;
+                padding: 15px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+            }
+
+            &:hover {
+                opacity: 0.8;
+
+            }
+
+            &-title {
+                color: #eee;
+                max-width: 100%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-weight: 600;
+                line-height: 1.5;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+            }
+
+            &-next {
+                color: #ccc;
+                font-size: 13px;
+                text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+            }
+        }
+
+        &-benefits {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include mq(465) {
+                flex-wrap: wrap;
+            }
+
+            &-title {
+                text-align: center;
+                margin-bottom: 50px;
+                padding-bottom: 30px;
+                color: #333;
+                font-size: 200%;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    background-color: #444;
+                }
+            }
+        }
+
+        &-benefit {
+            margin-right: 45px;
+            width: 100%;
+            max-width: 350px;
+            @include mq(465) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &-icon {
+                width: 100%;
+                max-width: 94px;
+                height: 94px;
+                border-radius: 50%;
+                border: 1px solid #1ABC9C;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                // cursor: pointer;
+
+                &::before,
+                &::after {
+                    transition: all .3s ease;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 110%;
+                    height: 110%;
+                    background-color: #000;
+                    border-radius: 50%;
+
+                    opacity: 0;
+
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-color: #4dd1cd;
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+
+            &:nth-child(1) {
+                &>div>div::after {
+                    mask-image: url('../../public/imgs/headphones.svg');
+                }
+            }
+
+            &:nth-child(2) {
+                &>div>div::after {
+                    mask-image: url('../../public/imgs/time.svg');
+                }
+            }
+
+            &:nth-child(3) {
+                &>div>div::after {
+                    mask-image: url('../../public/imgs/like.svg');
+                }
+            }
+
+            &-title {
+                font-weight: 400;
+                font-size: 130%;
+                color: #333;
+            }
+        }
+
+        &-about {
+            &-title {
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 200%;
+                font-weight: 600;
+                line-height: 1.5;
+                color: #444;
+            }
+
+            &-text {
+                text-align: center;
+                margin-bottom: 25px;
+                line-height: 1.8;
+                font-weight: 300;
+            }
+        }
+
+        &-reviews {
+            &-title {
+                text-align: center;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+                font-size: 200%;
+                font-weight: 600;
+                line-height: 1.5;
+                color: #444;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    background-color: #444;
+                }
+            }
+
+            &-items {
+                display: flex;
+
+            }
+
+            &-item {
+                margin-right: 20px;
+                width: 100%;
+                max-width: 365px;
+                // max-height: 300px;
+                // overflow-x: hidden;
+                // background-color:rgba($color: #000000, $alpha: .2);
+                background-color: rgba($color: #333342, $alpha: .4);
+                // border: 1px solid rgba(0, 0, 0, 0.1);
+                opacity: .2;
+                // box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+
+                padding: 20px;
+                border-radius: 5px;
+                display: flex;
+
+                &-logo {
+                    width: 100%;
+                    height: 64px;
+                    max-width: 64px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: 10px;
+
+                    &>img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                &-text {
+                    line-height: 1.8;
+                    font-style: italic;
+                    color: #eee;
+                    font-size: 18px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+}

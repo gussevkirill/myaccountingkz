@@ -1,0 +1,116 @@
+.phoneconsultation {
+    margin-bottom: 30px;
+    position: relative;
+    &__input {
+        // max-width: 400px;
+
+        margin-bottom: 18px;
+
+
+        &.toggle {
+            display: flex;
+            align-items: center;
+            width: 100%;    
+            @include mq(620){
+                flex-wrap: wrap;
+            }
+
+            // max-width: 830px;
+            &>label {
+                display: flex;
+                margin-left: 16px;
+                cursor: pointer;
+            }
+        }
+
+        &.data ,
+        &.number{
+            display: flex;
+            align-items: center;
+            @include mq(520){
+                flex-wrap: wrap;
+            }
+        }
+        &.number{
+            &>.phoneconsultation__input-right{
+                margin-right: 16px;
+                max-width: 260px;
+                @include mq(520){
+                    max-width: 100%;
+                    margin-right: 0;
+                    // margin-right: 0;
+                    // margin-bottom: 15px;
+                }
+                &:last-child{
+                    margin-right: 0;
+                    max-width: 125px;
+                    @include mq(520){
+                        max-width: 100%;
+                        margin-right: 0;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+
+        &-checkbox {
+            margin-right: 12px;
+        }
+
+        &-left,
+        &-right {
+            width: 100%;
+            max-width: 400px;
+            @include mq(520){
+                // flex-wrap: wrap;
+                max-width: 100%;
+            }
+
+            &>input {
+                width: 100%;
+                padding: 10px 14px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                overflow: hidden;
+                cursor: pointer;
+            }
+        }
+        &-left{
+            margin-right: 16px;
+            @include mq(520){
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        &-text{
+            width: 100%;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 120px;
+            padding: 18px;
+            max-width: 816px;
+            margin-bottom: 24px;
+        }
+        
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 700;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 24px;
+    }
+    &__btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 816px;
+        &>label{
+            cursor: pointer;
+            &>input{
+                display: none;
+            }
+        }
+    }
+}
