@@ -27,7 +27,7 @@ function Modal({ active, setActive }) {
 
 
 
-  const sendApplication = async () => {
+  const sendApplication = async (e) => {
 
     const formData = new FormData()
 
@@ -49,14 +49,20 @@ function Modal({ active, setActive }) {
 
     formData.append('message', 'letter')
     formData.append('title', 'Обратная связь')
+    e.target.disabled = true
+    // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
+    const { data, status } = await axios.post('http://localhost:3001/letters', formData)
 
-    const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
     if (status === 200) {
-      setMessage({ status: 200, title: 'Спасибо за обращение' })
+      setMessage({ status: 200, title: 'Письмо доставленно' })
+
       for (const key in fields) {
         setFields(prev => ({ ...prev, [key]: '' }))
       }
-      closeModal()
+      setTimeout(() => {
+        closeModal()
+        e.target.disabled = false
+      }, 1500);
     }
   }
 
@@ -92,6 +98,7 @@ function Modal({ active, setActive }) {
                   onChange={ setField('name') }
                   className="modal__body-input"
                   placeholder='Как к вам обращаться'
+                  maxLength='50'
                 />
               </label>
               <label>
@@ -102,6 +109,7 @@ function Modal({ active, setActive }) {
                   value={ fields['email'] }
                   onChange={ setField('email') }
                   type='email'
+                  maxLength='150'
                 />
               </label>
               <label>
@@ -112,6 +120,7 @@ function Modal({ active, setActive }) {
                   value={ fields['phone'] }
                   onChange={ setField('phone') }
                   type='text'
+                  maxLength='12'
                 />
               </label>
               <label>
@@ -119,6 +128,7 @@ function Modal({ active, setActive }) {
                 <textarea
                   value={ fields['comment'] }
                   onChange={ setField('comment') }
+                  maxLength='255'
                 ></textarea>
               </label>
               <button

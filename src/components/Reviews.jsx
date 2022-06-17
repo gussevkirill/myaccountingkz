@@ -46,6 +46,8 @@ function Reviews() {
         text: { error: false, title: '' }
     })
 
+    const [status, setStatus] = useState(null)
+
     const setField = field => e => {
         setFields(prev => ({ ...prev, [field]: { ...prev[field], title: e.target.value, error: !e.target.value.length } }))
     }
@@ -68,9 +70,14 @@ function Reviews() {
         formData.append('text', fields['text']['title'])
 
 
-        const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
+        // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
+        const { data, status } = await axios.post('http://localhost:3001/letters', formData)
 
         if (status === 200) {
+            setStatus(status)
+            setTimeout(() => {
+                setStatus(null)
+            }, 1500);
             for (const key in fields) {
                 setFields(prev => ({ ...prev, [key]: { ...prev[key], title: '' } }))
             }
@@ -125,6 +132,9 @@ function Reviews() {
                         </div>
                     </Slider>
                 </div>
+            </div>
+            <div className={ `notification ${status && 'show'}` }>
+                <h1>Отзыв отправлен</h1>
             </div>
         </div>
     )

@@ -34,10 +34,6 @@ function App() {
             path="/consultation-mail"
             element={ <Consultation consultationType={ 'mail' } /> }
           />
-          {/* <Route
-            path="/consultation"
-            element={ <MailConsultation /> }
-          /> */}
           <Route
             path="/confidencial"
             element={ <Confindecial /> }

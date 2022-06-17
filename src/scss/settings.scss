@@ -17,9 +17,10 @@ body {
 .wrapper,
 .main__page-layout {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
     // justify-content: space-between;
 }
 
@@ -43,18 +44,72 @@ body {
     color: #fff;
     transition: all .3s ease;
 
-    &.error{
+    &.error {
         background-color: rgb(204, 22, 22);
         top: 43px;
     }
-    &.success{
+
+    &.success {
         background-color: rgb(50, 175, 50);
         top: 43px;
     }
+}
 
-    
 
-    // &.active {
-    //     top: 0;
-    // }
+.scroll_up {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    transition: all .3s ease;
+
+    &.show {
+        display: block;
+    }
+
+    &:hover {
+        background-color: #fff;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        mask-image: url('../../public/imgs/arrowup.svg');
+        background-color: #4dd1cd;
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+}
+
+
+.notification {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    right: 0;
+    height: 50px;
+    background-color: rgba(255, 255, 255, .5);
+    transition: all .3s ease;
+    &.show{
+        top: 0;
+    }
+    &>h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 600;
+    }
+
 }

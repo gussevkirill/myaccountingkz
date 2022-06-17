@@ -29,7 +29,7 @@ function NewQuestion() {
                         </li>
                         </Link>
                     </ul>
-                </div>
+                </div>  
             </div>
         </Common>
     )

@@ -8,9 +8,10 @@ import { useNavigate } from 'react-router-dom'
 
 function Consultation({ consultationType }) {
 
+
+    console.log('first', process.env.REACT_APP_BACKAND_URL)
     const [selectedSelect, setSelectedSelect] = useState(0)
     const [isRead, setIsRead] = useState(null)
-
     const history = useNavigate()
 
     const [fields, setFields] = useState({
@@ -53,13 +54,16 @@ function Consultation({ consultationType }) {
     }
 
 
+
     const orderConsultation = async (e) => {
+        // console.log('e', e)
         const formData = new FormData()
         const { file, isPayer, ...other } = fields
 
         formData.append('message', 'question')
         formData.append('title', consultationType === 'phone' ? 'Телефонная консультация' : 'Письменная консультация')
         formData.append('isPayer', isPayer)
+        formData.append('consultation_type', consultationType)
 
         for (const key in other) {
             if (!fields[key].length) {
@@ -73,14 +77,17 @@ function Consultation({ consultationType }) {
         if (file) formData.append('file', fields['file'])
 
         setError(false)
-        e.target.disabled = true
-        const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
-        
+        // e.target.disabled = true
+        // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
+        const { data, status } = await axios.post(`${process.env.REACT_APP_BACKAND_URL}/letters`, formData)
+
         if (status === 200) {
-            setMessage({ status: 200, title: data.message })
-            setTimeout(() => {
-                history('/')
-            }, 650);
+            // setMessage({ status: 200, title: data.message })
+            // console.log('data inner', token)
+            window.location.href = data.link
+            // setTimeout(() => {
+            //     history('/')
+            // }, 2000);
         }
     }
 
@@ -187,7 +194,7 @@ function Consultation({ consultationType }) {
                             </div>
                             <div className="phoneconsultation__input">
                                 <CustomSelect
-                                    title={ 'Представительство ТОО «ИнфоТех&Сервис»' }
+                                    title={ 'Представительство ИП My.Accounting.KZ' }
                                     items={
                                         [
                                             { id: 0, title: 'Алматы' },
@@ -224,7 +231,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Контактное лицо'
                                         value={ fields['name'] }
                                         onChange={ e => setFieldValue('name', e.target.value) }
-                                        maxLength='255'
+                                        maxLength='150'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
@@ -234,7 +241,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Электронная почта'
                                         value={ fields['email'] }
                                         onChange={ e => setFieldValue('email', e.target.value) }
-                                        maxLength='255'
+                                        maxLength='150'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
@@ -246,7 +253,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Номер мобильного телефона'
                                         value={ fields['phone'] }
                                         onChange={ e => setFieldValue('phone', e.target.value) }
-                                        maxLength='20'
+                                        maxLength='12'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
@@ -256,7 +263,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Номер городского телефона'
                                         value={ fields['home_phone'] }
                                         onChange={ e => setFieldValue('home_phone', e.target.value) }
-                                        maxLength='16'
+                                        maxLength='14'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>

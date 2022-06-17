@@ -7,10 +7,10 @@ function AboutMe({ title = 'Обо мне' }) {
   const settings = {
     dots: false,
     infinite: true,
-    autoPlay: true,
-    autoPlaySpeed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     pauseOnFocus: false,
@@ -19,7 +19,7 @@ function AboutMe({ title = 'Обо мне' }) {
       {
         breakpoint: 1025,
         settings: {
-          arrows:false
+          arrows: false
         }
       },
       {
@@ -27,16 +27,9 @@ function AboutMe({ title = 'Обо мне' }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          arrows:false
+          arrows: false
         }
       },
-      // {
-      //   breakpoint: 428,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1
-      //   }
-      // }
     ]
   }
 
