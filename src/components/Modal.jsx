@@ -50,8 +50,7 @@ function Modal({ active, setActive }) {
     formData.append('message', 'letter')
     formData.append('title', 'Обратная связь')
     e.target.disabled = true
-    // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
-    const { data, status } = await axios.post('http://localhost:3001/letters', formData)
+    const { data, status } = await axios.post(`${process.env.REACT_APP_BACKAND_URL}/letters`, formData)
 
     if (status === 200) {
       setMessage({ status: 200, title: 'Письмо доставленно' })

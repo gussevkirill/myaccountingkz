@@ -2,12 +2,10 @@ import Consultation from "components/Consultation";
 import { services } from "data/services";
 import AboutMe from "pages/AboutMe";
 import Confindecial from "pages/Confindecial";
-import MailConsultation from "pages/MailConsultation";
 import Main from "pages/Main";
 import NewQuestion from "pages/NewQuestion";
-import PhoneConsultation from "pages/PhoneConsultation";
 import Rules from "pages/Rules";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -40,7 +38,11 @@ function App() {
           />
           <Route
             path="/rules"
-            element={ <Rules /> }
+            element={ <Rules path={'/21212.pdf'}/> }
+          />
+          <Route
+            path="/tlk"
+            element={ <Rules path={'/tlk.pdf'} /> }
           />
           {
             services && services.map(service =>
@@ -51,7 +53,7 @@ function App() {
               />
             )
           }
-          <Route path="*" element={ <div>Page not found</div> } />
+          <Route path="*" element={ <Navigate to={ '/' } replace /> } />
         </Routes>
       </div>
     </div>

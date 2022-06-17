@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Rules() {
+function Rules({path}) {
     return (
         <div style={ { height: '100vh' } }>
-            <embed src={ '/21212.pdf' } width='100%' height='100%' type="" />
+            <embed src={ path } width='100%' height='100%' type="" />
         </div>
     )
 }

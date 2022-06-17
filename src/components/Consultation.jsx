@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom'
 function Consultation({ consultationType }) {
 
 
-    console.log('first', process.env.REACT_APP_BACKAND_URL)
     const [selectedSelect, setSelectedSelect] = useState(0)
     const [isRead, setIsRead] = useState(null)
     const history = useNavigate()
@@ -56,7 +55,6 @@ function Consultation({ consultationType }) {
 
 
     const orderConsultation = async (e) => {
-        // console.log('e', e)
         const formData = new FormData()
         const { file, isPayer, ...other } = fields
 
@@ -77,13 +75,10 @@ function Consultation({ consultationType }) {
         if (file) formData.append('file', fields['file'])
 
         setError(false)
-        // e.target.disabled = true
-        // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
         const { data, status } = await axios.post(`${process.env.REACT_APP_BACKAND_URL}/letters`, formData)
 
         if (status === 200) {
             // setMessage({ status: 200, title: data.message })
-            // console.log('data inner', token)
             window.location.href = data.link
             // setTimeout(() => {
             //     history('/')

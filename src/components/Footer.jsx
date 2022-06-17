@@ -30,6 +30,9 @@ function Footer() {
                         <Link to={ '/confidencial' }>
                             <span className='footer__bottom-left-text'>Политика конфиденциальности</span>
                         </Link>
+                        <Link to={ '/tlk' }>
+                            <span className='footer__bottom-left-text'>Титульный</span>
+                        </Link>
                     </div>
                     <div className="footer__bottom-right">
                         <ul className="footer__bottom-right-items">

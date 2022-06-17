@@ -1,4 +1,3 @@
-import { Form } from 'components/Form'
 import Common from 'layouts/Common'
 import React from 'react'
 import { Link } from 'react-router-dom'
