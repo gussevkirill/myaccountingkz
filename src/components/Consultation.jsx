@@ -22,7 +22,7 @@ function Consultation({ consultationType }) {
         email: '',
         phone: '',
         home_phone: '',
-        number: '',
+        // number: '',
         question: '',
         text: '',
         file: null,
@@ -262,7 +262,7 @@ function Consultation({ consultationType }) {
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
-                                <div className="phoneconsultation__input-right">
+                                {/* <div className="phoneconsultation__input-right">
                                     <input
                                         type="text"
                                         placeholder='Вн. номер'
@@ -271,7 +271,7 @@ function Consultation({ consultationType }) {
                                         maxLength='50'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="phoneconsultation__input">
                                 <CustomSelect

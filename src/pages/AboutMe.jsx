@@ -2,6 +2,7 @@ import Common from 'layouts/Common'
 import React from 'react'
 import Slider from 'react-slick'
 
+
 function AboutMe({ title = 'Обо мне' }) {
 
   const settings = {

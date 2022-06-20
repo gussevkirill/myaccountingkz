@@ -1,4 +1,5 @@
 import Consultation from "components/Consultation";
+import ScrollToTop from "components/ScrollToTop";
 import { services } from "data/services";
 import AboutMe from "pages/AboutMe";
 import Confindecial from "pages/Confindecial";
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
+        <ScrollToTop />
         <Routes >
           <Route
             path="/"
@@ -38,11 +40,11 @@ function App() {
           />
           <Route
             path="/rules"
-            element={ <Rules path={'/21212.pdf'}/> }
+            element={ <Rules path={ '/21212.pdf' } /> }
           />
           <Route
             path="/tlk"
-            element={ <Rules path={'/tlk.pdf'} /> }
+            element={ <Rules path={ '/tlk.pdf' } /> }
           />
           {
             services && services.map(service =>

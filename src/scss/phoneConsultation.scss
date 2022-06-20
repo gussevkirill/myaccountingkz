@@ -34,7 +34,7 @@
         &.number{
             &>.phoneconsultation__input-right{
                 margin-right: 16px;
-                max-width: 260px;
+                // max-width: 260px;
                 @include mq(520){
                     max-width: 100%;
                     margin-right: 0;
@@ -43,7 +43,7 @@
                 }
                 &:last-child{
                     margin-right: 0;
-                    max-width: 125px;
+                    // max-width: 125px;
                     @include mq(520){
                         max-width: 100%;
                         margin-right: 0;

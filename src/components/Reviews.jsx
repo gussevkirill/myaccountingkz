@@ -70,7 +70,7 @@ function Reviews() {
         formData.append('text', fields['text']['title'])
 
 
-        // const { data, status } = await axios.post('http://myaccounting97.ru:3001/letters', formData)
+        // const { data, status } = await axios.post('http://localhosy.ru:3001/letters', formData)
         const { data, status } = await axios.post(`${process.env.REACT_APP_BACKAND_URL}/letters`, formData)
 
         if (status === 200) {
