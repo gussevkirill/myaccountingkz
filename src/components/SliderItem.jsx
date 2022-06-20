@@ -6,10 +6,12 @@ function SliderItem(config) {
         title = 'Аутсорсинг',
         secondTitle = 'Бухгалтерских и налоговых услуг',
         text = 'Занимайтесь бизнесом, а мы позаботимся о бухгалтерии',
-        slide = 'slide1'
+        slide = 'slide1',
+        img = '/imgs/slide3.jpeg'
     } = config
 
     return (
+        
         <div className={ `slider__item slide1 ${slide}` }>
             <div className="container">
                 <div className="slider__item-wrapper">
