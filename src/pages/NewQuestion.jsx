@@ -18,17 +18,17 @@ function NewQuestion() {
                                 <button className='new-question-item-btn'>Запросить консультацию</button>
                             </li>
                         </Link>
-                        <Link to={`/consultation-mail`}>
-                        <li className="new-question-item">
-                            <div className="new-question-item-img">
-                                <img src="/imgs/mess.svg" alt="" />
-                            </div>
-                            <h3 className="new-question-item-title">Письменная консультация</h3>
-                            <button className='new-question-item-btn'>Написать вопрос</button>
-                        </li>
+                        <Link to={ `/consultation-mail` }>
+                            <li className="new-question-item">
+                                <div className="new-question-item-img">
+                                    <img src="/imgs/mess.svg" alt="" />
+                                </div>
+                                <h3 className="new-question-item-title">Письменная консультация</h3>
+                                <button className='new-question-item-btn'>Написать вопрос</button>
+                            </li>
                         </Link>
                     </ul>
-                </div>  
+                </div>
             </div>
         </Common>
     )

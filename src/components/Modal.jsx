@@ -31,8 +31,6 @@ function Modal({ active, setActive }) {
 
     const formData = new FormData()
 
-
-
     for (const key in fields) {
       if (!fields[key].length) {
         setMessage({ status: 401, title: 'Заполните все поля' })
