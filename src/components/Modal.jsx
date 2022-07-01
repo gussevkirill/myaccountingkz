@@ -19,7 +19,7 @@ function Modal({ active, setActive }) {
 
   const [message, setMessage] = useState(null)
 
-  const emailPattern = /^([a-zA-Z]{1,})@([a-zA-Z]){1,5}.[a-zA-Z]{1,5}$/
+  const emailPattern = /^([\w\d]{1,})@([\w]){1,5}.[\w]{1,5}$/
 
   const setField = field => e => {
     setFields(prev => ({ ...prev, [field]: field === 'phone' ? e.target.value.replace(/\D/g, '') : e.target.value }))
@@ -117,7 +117,7 @@ function Modal({ active, setActive }) {
                   value={ fields['phone'] }
                   onChange={ setField('phone') }
                   type='text'
-                  maxLength='12'
+                  maxLength='11'
                 />
               </label>
               <label>

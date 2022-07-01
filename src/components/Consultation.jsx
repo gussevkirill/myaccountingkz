@@ -248,7 +248,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Номер мобильного телефона'
                                         value={ fields['phone'] }
                                         onChange={ e => setFieldValue('phone', e.target.value) }
-                                        maxLength='12'
+                                        maxLength='11'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
