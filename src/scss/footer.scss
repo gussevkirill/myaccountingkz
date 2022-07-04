@@ -111,7 +111,7 @@
         justify-content: space-between;
         margin: 0 100px;
 
-        @include mq(656) {
+        @include mq(894) {
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
@@ -121,12 +121,13 @@
             display: flex;
             align-items: center;
 
-            @include mq(895) {
+            @include mq(899) {
                 flex-wrap: wrap;
-            }
-
-            @include mq(656) {
+                width: 100%;
                 justify-content: center;
+            }
+            @include mq(414) {
+                width: auto;
             }
 
             &-text {
@@ -134,8 +135,44 @@
                 color: #ccc;
                 line-height: 1.8;
                 margin-right: 15px;
-                width: 100%;
-                // white-space: nowrap;
+                display: flex;
+                align-items: center;
+
+                &>span {
+                    margin-right: 15px;
+
+                    @include mq(935) {
+                        width: 100%;
+                        text-align: center;
+                        margin-right: 0;
+                        margin-left: 0;
+                    }
+
+                    @include mq(414) {
+                        width: auto;
+                    }
+
+                    &:last-child {
+                        margin-left: 15px;
+                        margin-right: 0;
+                        display: block;
+                        @include mq(935){
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                @include mq(935) {
+                    flex-wrap: wrap;
+                }
+
+                @include mq(899) {
+                    width: 100%;
+                }
+
+                @include mq(418) {
+                    margin-right: 0;
+                }
 
                 @include mq(327) {
                     margin-right: 0;

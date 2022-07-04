@@ -26,7 +26,10 @@ function Footer() {
                 </div>
                 <div className="footer__bottom">
                     <div className="footer__bottom-left">
-                        <span className='footer__bottom-left-text'>My.Accounting.KZ © 2022 | Все права защищены</span>
+                        <div className='footer__bottom-left-text'>
+                            <span>My.Accounting.KZ © 2022 </span>
+                            <span>Все права защищены</span>
+                        </div>
                         <Link to={ '/confidencial' }>
                             <span className='footer__bottom-left-text'>Политика конфиденциальности</span>
                         </Link>
