@@ -42,10 +42,6 @@ function App() {
             path="/rules"
             element={ <Rules path={ '/21212.pdf' } /> }
           />
-          <Route
-            path="/tlk"
-            element={ <Rules path={ '/tlk.pdf' } /> }
-          />
           {
             services && services.map(service =>
               <Route
