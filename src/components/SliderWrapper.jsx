@@ -8,7 +8,7 @@ function SliderWrapper() {
     const settings = {
         dots: true,
         infinite: true,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         slidesToShow: 1,
