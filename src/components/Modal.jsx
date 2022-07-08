@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import { phoneMask } from 'utils'
 import Input from './Input'
 
 function Modal({ active, setActive }) {
@@ -22,7 +23,7 @@ function Modal({ active, setActive }) {
   const emailPattern = /^([\w\d]{1,})@([\w]){1,5}.[\w]{1,5}$/
 
   const setField = field => e => {
-    setFields(prev => ({ ...prev, [field]: field === 'phone' ? e.target.value.replace(/\D/g, '') : e.target.value }))
+    setFields(prev => ({ ...prev, [field]: field === 'phone' ? phoneMask(e.target.value) : e.target.value }))
   }
 
 
@@ -117,7 +118,7 @@ function Modal({ active, setActive }) {
                   value={ fields['phone'] }
                   onChange={ setField('phone') }
                   type='text'
-                  maxLength='11'
+                  maxLength='15'
                 />
               </label>
               <label>

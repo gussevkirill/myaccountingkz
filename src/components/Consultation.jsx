@@ -5,6 +5,7 @@ import Common from 'layouts/Common'
 import Rules from './Rules'
 import Button from 'ui/buttons/Button'
 import { useNavigate } from 'react-router-dom'
+import { phoneMask } from 'utils'
 
 function Consultation({ consultationType }) {
 
@@ -35,9 +36,12 @@ function Consultation({ consultationType }) {
 
     const setFieldValue = (type, item) => {
         setFields(prev => ({
-            ...prev, [type]: type.match(/(phone|home_number|number)/) ? item.replace(/\D/g, '') : item
+            ...prev, [type]: type.match(/(phone|home_number)/) ? phoneMask(item) : item
         }))
     }
+
+
+    
 
     const loadFile = e => {
         const file = e.target.files[0]
@@ -248,7 +252,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Номер мобильного телефона'
                                         value={ fields['phone'] }
                                         onChange={ e => setFieldValue('phone', e.target.value) }
-                                        maxLength='11'
+                                        maxLength='15'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>
@@ -258,7 +262,7 @@ function Consultation({ consultationType }) {
                                         placeholder='Номер городского телефона'
                                         value={ fields['home_phone'] }
                                         onChange={ e => setFieldValue('home_phone', e.target.value) }
-                                        maxLength='14'
+                                        maxLength='15'
                                     />
                                     <span className='phoneconsultation__input-error'></span>
                                 </div>

@@ -41,3 +41,9 @@ export const reviews = [
 ]
 
 
+export const phoneMask = (phone) => phone
+    .replace(/\D/g, '')
+    .replace(/^(\d)/, '+$1')
+    .replace(/^(\+\d{1})(\d{1,3})/, '$1 $2')
+    .replace(/(\d{3})(\d{1,3})/, '$1 $2')
+    .replace(/(\d{3})(\d{1,4})/, '$1 $2')
